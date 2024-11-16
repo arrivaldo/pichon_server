@@ -8,6 +8,8 @@ import salaryRouter from './routes/salary.js'
 import leaveRouter from './routes/leave.js'
 import settingRouter from "./routes/setting.js"
 import dashboardRouter from './routes/dashboard.js'
+import dotenv from 'dotenv'; // Add this line
+dotenv.config(); // Load environment variables from the .env file
 
 connectToDatabase()
 
