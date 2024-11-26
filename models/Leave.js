@@ -5,12 +5,13 @@ const leaveSchema = new Schema({
     employeeId: { type: Schema.Types.ObjectId, ref: "Employee", required: true },
     leaveType: {
         type: String,
-        enum: ["Sick Leave", "Casual Leave", "Annual Leave"],
+        enum: ["Falla en la unidad", "Siniestro"],
         required: true,
     },
     startDate: { type: Date, required: true },
-    endDate: { type: Date, required: true },
+    economico: { type: String, required: true },
     reason: { type: String, required: true },
+    images: [String], // This should match how you're storing image URLs
     status: {
         type: String,
         enum: ["Pending", "Approved", "Rejected"],

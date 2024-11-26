@@ -14,10 +14,13 @@ const getDepartments = async (req, res) => {
 const addDepartment = async (req, res) => {
 
     try {
-        const {dep_name, description} = req.body;
+        const {dep_name, description, placa, serie, economico} = req.body;
         const newDep = new Department({
             dep_name,
-            description
+            description,
+            placa,
+            economico,
+            serie
         })
         await newDep.save({success: true, department: newDep})
         return res.status(200).json
@@ -44,10 +47,12 @@ const getDepartment = async (req, res) => {
 const updateDepartment = async (req, res) => {
     try{
         const {id} = req.params;
-        const {dep_name, description} = req.body;
+        const {dep_name, description, placa, economico} = req.body;
         const updateDep = await Department.findByIdAndUpdate({_id: id}, {
             dep_name,
-            description
+            description,
+            placa,
+            economico
         })
         return res.status(200).json({success: true, updateDep})
     } catch(error) {

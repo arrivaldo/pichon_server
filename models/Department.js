@@ -6,6 +6,9 @@ import Salary from "./Salary.js"
 const departmentSchema = new mongoose.Schema({
     dep_name: {type: String, required: true},
     description: {type: String},
+    placa: {type: String},
+    economico: {type: String},
+    serie: {type: String},
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now}
 })

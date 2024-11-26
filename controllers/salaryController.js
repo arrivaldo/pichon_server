@@ -3,16 +3,14 @@
 
  const addSalary = async (req, res) => {
          try {
-             const {employeeId, basicSalary, allowances, deductions, payDate} = req.body
+             const {employeeId, comment, payDate} = req.body
 
-             const totalSalary = parseInt(basicSalary) + parseInt(allowances) - parseInt(deductions)
+            //  const totalSalary = parseInt(basicSalary) + parseInt(allowances) - parseInt(deductions)
 
              const newSalary = new Salary({
                  employeeId,
-                 basicSalary,
-                 allowances,
-                 deductions,
-                 netSalary: totalSalary,
+                 comment,
+                //  netSalary: totalSalary,
                  payDate
              })
 
